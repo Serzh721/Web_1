@@ -1,0 +1,60 @@
+th {
+    color: #2B2B2B;
+    font-size: 20px;
+}
+
+body {
+    background-image: url("pic/plant-2004483_1920.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+#main_table {
+    border-collapse: collapse;
+    width: 99%;
+    margin: 15px;
+}
+
+#sec_table {
+    width: 50%;
+    padding-top: 100px;
+}
+
+form > .otstup {
+    padding-bottom: 15px;
+}
+
+.podpis {
+    color: #2B2B2B;
+}
+
+#check, #res {
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#check:hover, #res:hover {
+    background: #3399FF !important;
+}
+
+#check:active, #res:active {
+    background: #8153FD !important;
+}
+
+img[alt="График"] {
+    box-shadow: 0 0 4px;
+}
+
+iframe[name="result"] {
+    border-width: 0px;
+    height: 160px;
+}
+
+input[name="x1"]:focus {
+    background: #eff112;
+}
+
+input[name="r1"]:focus {
+    background: #eff112;
+}

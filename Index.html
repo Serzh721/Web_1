@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web #1</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<table id="main_table">
+
+    <tr>
+        <th> Кривошейкин Сергей Дмитриевич</th>
+        <th> Лабораторная работа №1 по Веб программированию</th>
+        <th> Вариант 214009</th>
+        <th> P3214</th>
+    </tr>
+
+    <tr align="center">
+        <td colspan="4">
+
+            <table id="sec_table">
+                <tr>
+                    <td width="50%">
+                        <form name="forma" id="forma" action="check.php" method="post" target="result"
+                              onsubmit="return validate()">
+<!--                            <input type="hidden" name="x" id="MyEdit1" required="">-->
+                            <div class="otstup">
+                                <label class="podpis"> Изменение Х: </label>
+                                <input type="button" id="x11" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="-5">
+                                <input type="button" id="x12" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="-4">
+                                <input type="button" id="x13" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="-3">
+                                <input type="button" id="x14" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="-2">
+                                <input type="button" id="x15" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="-1">
+                                <input type="button" id="x16" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="0">
+                                <input type="button" id="x17" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="1">
+                                <input type="button" id="x18" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="2">
+                                <input type="button" id="x19" name="x1" onclick="OnClick(this.value, this.id)"
+                                       value="3">
+                                <input size="1" name="x" id="MyEdit1" required="" readonly>
+                            </div>
+                            <div class="otstup">
+                                <label class="podpis"> Изменение У:
+                                    <input type="text" name="y" placeholder="от -5 до 3">
+                                </label>
+                            </div>
+<!--                            <input  name="r" id="MyEdit2" required="">-->
+                            <div class="otstup">
+                                <label class="podpis"> Изменение R: </label>
+                                <input type="button" id="r11" name="r1" onclick="OnClick2(this.value, this.id)"
+                                       value="1">
+                                <input type="button" id="r12" name="r1" onclick="OnClick2(this.value, this.id)"
+                                       value="2">
+                                <input type="button" id="r13" name="r1" onclick="OnClick2(this.value, this.id)"
+                                       value="3">
+                                <input type="button" id="r14" name="r1" onclick="OnClick2(this.value, this.id)"
+                                       value="4">
+                                <input type="button" id="r15" name="r1" onclick="OnClick2(this.value, this.id)"
+                                       value="5">
+                                <input size="1" name="r" id="MyEdit2" required="" readonly>
+                            </div>
+                            <div class="otstup">
+                                <input id="check" type="submit" title="Проверить">
+                                <input id="res" type="reset">
+                            </div>
+                            <input type="hidden" name="offset">
+                            <div>
+                                <iframe name="result"></iframe>
+                            </div>
+                            <div id="trouble">
+
+                            </div>
+
+                        </form>
+                    </td>
+
+                    <td width="50%" align="center">
+                        <img src="pic/grafik.PNG" alt="График">
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>
+
+<script>
+    // function getX(objButton){
+    //     var X = undefined;
+    //     X = objButton.value;
+    // }
+    // function getR(objButton) {
+    //     var R = undefined;
+    //     R = objButton.value;
+    // }
+
+    document.forms["forma"]["offset"].value = new Date().getTimezoneOffset();
+
+    function validate() {
+        let x = document.forms["forma"]["x"].value;
+        let y = document.forms["forma"]["y"].value;
+        let r = document.forms["forma"]["r"].value;
+
+        if (isNaN(x) || x === "") {
+            document.getElementById("trouble").innerHTML = "Выберите корректное значение Х";
+            // alert("Выберите корректное значение Х");
+            return false;
+        }
+
+        if (y === "" || isNaN(y)) {
+            document.getElementById("trouble").innerHTML = "Выберите корректное значение Y";
+            // alert("Выберите корректное значение Y");
+            return false;
+        }
+
+        if (isNaN(r) || r === "") {
+            document.getElementById("trouble").innerHTML = "Выберите корректное значение R";
+            // alert("Выберите корректное значение R");
+            return false;
+        }
+    }
+
+    //let last = "test";
+
+    function OnClick(value, id) {
+        document.getElementById("MyEdit1").value = value;
+        // document.getElementById(id).style.backgroundColor = "yellow";
+        // document.getElementById(last).style.backgroundColor = "";
+        // last = id;
+    }
+
+    //let last2 = "test";
+
+    function OnClick2(value, id) {
+        document.getElementById("MyEdit2").value = value;
+        // document.getElementById(id).style.backgroundColor = "crimson";
+        // document.getElementById(last2).style.backgroundColor = "black";
+        // last2 = id;
+    }
+
+</script>
